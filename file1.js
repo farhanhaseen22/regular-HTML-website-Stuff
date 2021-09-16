@@ -1,1 +1,0 @@
-const s1 = "Hi Mama";

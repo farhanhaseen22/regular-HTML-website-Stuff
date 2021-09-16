@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss\\main.scss"],"names":[],"mappings":"AAGA;EACI,kBAJK;EAKL,OAJK;EAKL;EACA","file":"main.77bb5cfd.css","sourceRoot":"..\\src","sourcesContent":["$color1: limegreen;\r\n$color2: coral;\r\n\r\nbody {\r\n    background-color: $color1;\r\n    color: $color2;\r\n    text-shadow: 1px 1px 0 #000;\r\n    font-size: 10vw;\r\n}\r\n"]}
