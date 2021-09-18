@@ -1,9 +1,19 @@
 $color1: limegreen;
 $color2: coral;
+$grad: linear-gradient(90deg, rgba(251,147,9,1) 19%, rgba(236,255,0,1) 100%);
 
 body {
-    background-color: $color1;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: bisque;
+}
+.mid {
+    background-color: $grad;
+    background-clip: text;
     color: $color2;
-    text-shadow: 1px 1px 0 #000;
-    font-size: 10vw;
+    // color: transparent;
+    // text-shadow: 1px 1px 0 #000;
 }

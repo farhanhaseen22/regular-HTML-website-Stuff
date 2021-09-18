@@ -4,3 +4,4 @@ sass --watch src/scss:dist/css
 
 npm install -g sass
 npm install -g parcel-bundler
+npm i -D postcss-preset-env
