@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="pingback" href="https: //domainname.com/xmlrpc.php" />
+        <title></title>
+        <!-- style and script resources -->
+        <link rel="stylesheet" href="" media="all">
+        <script src=""></script>
+        <!--meta properties -->
+        <meta name="description" content=" Your site description." />
+        <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+        <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
+        <link rel="canonical" href="" />
+        <!--open graph meta tags for social sites and search engines-->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="  Opengraph content 25 char are best" />
+        <meta property="og:description" content="  #description." />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:image" content="images//hom-banner-compressed.jpg" />
+        <meta property="og:image:secure_url" content="images//hom-banner-compressed.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="660" />
+        <!--twitter description-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="." />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
+        <meta name="twitter:creator" content="@" />
+        <!--opengraph tags for location or address for information panel in google-->
+        <meta name="og:latitude" content="" />
+        <meta name="og:longitude" content="" />
+        <meta name="og:street-address" content="" />
+        <meta name="og:locality" content="" />
+        <meta name="og:region" content="" />
+        <meta name="og:postal-code" content="" />
+        <meta name="og:country-name" content="" />
+        <!--search engine verification-->
+        <meta name="google-site-verification" content="" />
+        <meta name="yandex-verification" content="" />
+        <!--powered by meta-->
+        <meta name="generator" content="" />
+        <!-- Site favicon icons -->
+        <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-32x32.png" sizes="32x32" />
+        <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon/cropped-cropped-favicon-1-1-180x180.png" />
+        <meta name="msapplication-TileImage" content="images/icon/cropped-cropped-favicon-1-1-270x270.png" />
+        <!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
+
+        <!-- Styling of the side bar -->
+        <style>
+            body {
+              font-family: "Lato", sans-serif;
+              transition: background-color .5s;
+            }
+            
+            .sidenav {
+              height: 100%;
+              width: 0;
+              position: fixed;
+              z-index: 1;
+              top: 0;
+              left: 0;
+              background-color: hsl(240, 7%, 14%);
+              overflow-x: hidden;
+              transition: 0.5s;
+              padding-top: 60px;
+            }
+
+            .active {
+                width: 250px;
+            }
+            
+            .sidenav a {
+              padding: 8px 8px 8px 32px;
+              text-decoration: none;
+              font-size: 25px;
+              color: hsl(0, 73%, 53%);
+              display: block;
+              transition: 0.3s;
+            }
+            
+            .sidenav a:hover {
+              color: hsla(350, 77%, 48%, 0.822);
+            }
+            
+            .sidenav .closebtn {
+              position: absolute;
+              top: 0;
+              right: 25px;
+              font-size: 36px;
+              margin-left: 50px;
+            }
+            
+            .main {
+              transition: margin-left .5s;
+              padding: 16px;
+              border: 2px solid;
+            }
+            
+            @media screen and (max-height: 450px) {
+              .sidenav {padding-top: 15px;}
+              .sidenav a {font-size: 18px;}
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="#" class="closebtn" onclick="openCloseNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <div id="main" class="main">
+            <h2>Sidenav Push Example</h2>
+            <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
+            <span id="sidenavBtn" style="font-size:30px;cursor:pointer"
+            onclick="openCloseNav()">&#9776; open</span>
+        </div>
+
+        <script>
+            const mySidenav = document.getElementById("mySidenav");
+
+            // console.log('event.target.id--');
+            // document.onclick = function() {}
+            document.addEventListener('click', function(event) {
+              console.log(event.target.id);
+                if(event.target.id !== 'sidenavBtn' && event.target.id !== 'mySidenav'){
+                  mySidenav.classList.remove('active');
+                }
+            })
+
+            function openCloseNav() {
+                mySidenav.classList.toggle('active');
+            }
+            // function openNav() {
+            //   document.getElementById("mySidenav").style.width = "250px";
+            //   document.getElementById("main").style.marginLeft = "250px";
+            //   document.body.style.backgroundColor = "rgba(0,0,0,0.2)";
+            // }
+            
+            // function closeNav() {
+            //   document.getElementById("mySidenav").style.width = "0";
+            //   document.getElementById("main").style.marginLeft= "0";
+            //   document.body.style.backgroundColor = "white";
+            // }
+        </script>
+    </body>
+</html>
