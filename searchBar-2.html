@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Bar - 2</title>
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --clr-primary: #ee6352;
+      --clr-body: #ddd;
+      --clr-bg: hsl(224, 69%, 17%);
+    }
+    
+    body {
+      font-family: basic-sans, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.125em;
+      line-height: 1.6;
+      color: var(--clr-body);
+      background: var(--clr-bg);
+    }
+    
+    /* .content {
+      background: white;
+      width: 70vw;
+      padding: 3em;
+      box-shadow: 0 0 3em rgba(0,0,0,.15);
+      position: relative;
+    } */
+    
+    .container {
+      --size: 30px;
+      /* font-size: 1.25em; */
+      border: 2px solid var(--clr-primary);
+      /* overflow: hidden; */
+      /* position: relative; */
+      background-color: #fff;
+      margin: 220px auto;
+      height: var(--size);
+      border-radius: 8px;
+      padding: 20px 20px;
+      display: flex;
+      align-items: center;
+      transition: width 0.3s;
+    }
+    
+    .container:hover > .search__input {
+      width: 350px;
+      cursor: pointer;
+    }
+
+    .container .search__input {
+      background: transparent;
+      border: 0;
+      outline: 0;
+      width: 0;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.8s;
+    }
+    
+    .search__submit {
+      font-size: 1rem;
+      margin-left: auto;
+      background: 0;
+      border: 0;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.8s;
+      /* width: calc(var(--size) - 10px); */
+      /* height: calc(var(--size) - 10px); */
+      /* color: var(--clr-body); */
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+      <input type="text" class="search__input" aria-label="search" placeholder="enter your search">
+      <button class="search__submit" aria-label="submit search"><i class="fas fa-search"></i></button>
+    </div>
+</body>
+</html>
