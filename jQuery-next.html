@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>next demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+    <p>Hello</p>
+    <p class="selected b1">Hello Again</p>
+    <p class="selected">Hello Again</p>
+    <p class="dected">Hello Again</p>
+    <div><span>And Again</span></div>
+
+    <script>
+        // $("p").next().css("background", "orange");
+        $("p.b1").next(".selected").css("background", "steelblue");
+    </script>
+  </body>
+</html>
