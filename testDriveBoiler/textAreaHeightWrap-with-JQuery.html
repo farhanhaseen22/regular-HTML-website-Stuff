@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area Height Wrap</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        textarea{
+            resize: none;
+            width: 15rem;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <textarea placeholder="Type, paste, cut text here...">PRELOADED TEXT. This JavaScript should now add better support for IOS browsers and Android browsers.</textarea>
+        <textarea placeholder="Type, paste, cut text here..."></textarea>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script>
+        $("textarea")
+        .each(function () {
+            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+        })
+        .on("input", function () {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
+    </script>
+</body>
+</html>

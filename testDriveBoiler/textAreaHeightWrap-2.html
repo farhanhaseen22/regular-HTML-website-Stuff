@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Area Height Wrap</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        padding: 0 20px;
+        }
+
+        h2 {
+        font-size: 30px;
+        }
+
+        main {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 800px;
+        }
+
+        textarea {
+        color: #444;
+        padding: 5px;
+        }
+
+        .txta {
+            width: 100%;
+            max-width: 500px;
+            min-height: 100px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    <h2>Textarea Auto-Resize with JavaScript</h2>
+
+    <h4>This solution was taken from <a href="https://www.impressivewebs.com/textarea-auto-resize/" target="_blank">here</a></h4>
+
+    <textarea placeholder="Type many lines of texts in here and you will see magic stuff" class="txta"></textarea>
+
+    <!-- Uncomment this to see multiple textareas in action -->
+    <!-- <textarea placeholder="Type many lines of texts in here and you will see magic stuff" class="txta common"></textarea>-->
+
+    </main>
+
+    <script>
+        // Targets all textareas with class "txta"
+        let textareas = document.querySelectorAll('.txta'),
+            hiddenDiv = document.createElement('div'),
+            content = null;
+
+        // Adds a class to all textareas
+        for (let j of textareas) {
+            j.classList.add("txtstuff");
+        }
+
+        // Build the hidden div's attributes
+
+        // The line below is needed if you move the style lines to CSS
+        // hiddenDiv.classList.add('hiddendiv');
+
+        // Add the "txta" styles, which are common to both textarea and hiddendiv
+        // If you want, you can remove those from CSS and add them via JS
+        hiddenDiv.classList.add("txta");
+
+        // Add the styles for the hidden div
+        // These can be in the CSS, just remove these three lines and uncomment the CSS
+        hiddenDiv.style.display = "none";
+        hiddenDiv.style.whiteSpace = "pre-wrap";
+        hiddenDiv.style.wordWrap = "break-word";
+
+        // Loop through all the textareas and add the event listener
+        for (let i of textareas) {
+            (function (i) {
+                // Note: Use 'keyup' instead of 'input'
+                // if you want older IE support
+                i.addEventListener("input", function () {
+                    // Append hiddendiv to parent of textarea, so the size is correct
+                    i.parentNode.appendChild(hiddenDiv);
+
+                    // This removes scrollbars
+                    i.style.overflow = "hidden";
+
+                    // Every input/change, grab the content
+                    content = i.value;
+
+                    // Add the same content to the hidden div
+
+                    // This is for old IE
+                    content = content.replace(/\n/g, "<br>");
+
+                    // The <br ..> part is for old IE
+                    hiddenDiv.innerHTML = content + '<br style="line-height: 3px;">';
+
+                    // Briefly make the hidden div block but invisible
+                    // This is in order to read the height
+                    hiddenDiv.style.visibility = "hidden";
+                    hiddenDiv.style.display = "block";
+                    i.style.height = hiddenDiv.offsetHeight + "px";
+
+                    // Make the hidden div display:none again
+                    hiddenDiv.style.visibility = "visible";
+                    hiddenDiv.style.display = "none";
+                });
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

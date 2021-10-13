@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area Height Wrap</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        textarea{
+            resize: none;
+            width: 15rem;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- <textarea
+            class="wrap"
+            id="wrap"
+            cols="3"
+            rows="3"
+            value=""
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ligula nulla, tristique nec pretium eget, aliquet sed magna. Integer ultricies ipsum ultrices tellus porta tincidunt. Curabitur a laoreet dolor, quis porta sapien. Morbi augue nisi, euismod et porta sit amet, euismod in metus. Integer hendrerit libero sed purus sagittis, eget sagittis odio posuere. Nunc velit metus, interdum quis leo vel, posuere laoreet ligula. Cras quis tempor ligula, ac tempus justo. Phasellus et nisl ac lorem pretium vulputate. Praesent at mollis justo. Sed sagittis felis sit amet purus posuere, eget mattis libero tristique. Vestibulum id faucibus risus. Vivamus libero mi, sollicitudin at dui at, tincidunt pretium lorem. Nullam euismod sem eu arcu aliquam sollicitudin bibendum venenatis dui.
+        </textarea> -->
+        <textarea placeholder="Type, paste, cut text here...">PRELOADED TEXT. This JavaScript should now add better support for IOS browsers and Android browsers.</textarea>
+        <textarea placeholder="Type, paste, cut text here..."></textarea>
+    </div>
+    <script>
+        const tx = document.getElementsByTagName("textarea");
+        
+        for (let i = 0; i < tx.length; i++) {
+            tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+            tx[i].addEventListener("input", OnInput, false);
+        }
+
+        function OnInput() {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        }
+    </script>
+</body>
+</html>
