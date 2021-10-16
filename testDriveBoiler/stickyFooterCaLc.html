@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer with Calc Method in CSS</title>
+    <style>
+        .content {
+            min-height: calc(100vh - 70px);
+            padding: 40px 40px 0 40px;
+        }
+
+        .footer {
+            margin-top: auto;
+            background-color: steelblue;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <h1>Sticky Footer with Calc Method in CSS</h1>
+        <p><button id="add">Add Content</button></p>
+    </div>
+
+    <footer class="footer">
+        Footer
+    </footer>
+
+    <script>
+        let mainDiv = document.getElementById('mainDiv');
+        let addContent = document.getElementById('add');
+        addContent.addEventListener('click', function () {
+            let p = document.createElement("p");
+            p.innerHTML = `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`;
+            mainDiv.append(p);
+        });
+
+        // $("#add").on("click", function () {
+        //     $("<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>").appendTo(".content");
+        // });
+    </script>
+</body>
+
+</html>

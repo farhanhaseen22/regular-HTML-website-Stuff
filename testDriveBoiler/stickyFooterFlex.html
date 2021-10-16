@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer with Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* IE 10-11 didn't like using min-height */
+            height: 100%;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .bodyDiv {
+            padding: 30px 30px 0;
+        }
+
+        .title {
+            margin: 0 0 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 3rem;
+            color: #ee6352;
+            line-height: 0.8;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        footer {
+            margin-top: auto;
+            background: #333;
+            color: white;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bodyDiv">
+        <h1 class="title">Sticky Footer with Flexbox</h1>
+        <div id="content">
+            <p><button id="add">Add Content</button></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; Farhan's Stuff, 2000 - Forever
+    </footer>
+
+    <script>
+        let content = document.getElementById('content');
+        let addContent = document.getElementById('add');
+        addContent.addEventListener('click', function () {
+            let p = document.createElement("p");
+            p.innerHTML = `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`;
+            content.append(p);
+        });
+    </script>
+</body>
+
+</html>
