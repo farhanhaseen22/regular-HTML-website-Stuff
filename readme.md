@@ -1,1 +1,1 @@
-In general, some basic web elements that I need per project.
+In general, some basic web elements that I might need for any project.
