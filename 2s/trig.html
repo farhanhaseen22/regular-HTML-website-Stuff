@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>trigger demo</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+      div {
+        color: blue;
+        font-weight: bold;
+      }
+      span {
+        color: red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+
+    <div class="parent">
+      <div class="baba">
+        <div class="container">
+          <ul>
+            <li><a href="#" class="d1">Waddup 1st!</a></li>
+            <li><a href="#" class="d2">Waddup 2nd!</a></li>
+            <li><a href="#" class="d3">Waddup 3rd!!</a></li>
+            <li><a href="#" class="d4">Given a jQuery</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <ul>
+      <li class="a">Rosario</li>
+      <li class="b">Lumiol</li>
+      <li class="c">Rosario</li>
+      <li class="d">Lumiol</li>
+      <li class="e">Rosario</li>
+    </ul>
+    <hr>
+    <button class="c1">Button #1</button>
+    <button class="c2">Button #2</button>
+    <div><span>0</span> button #1 clicks.</div>
+    <div><span>0</span> button #2 clicks.</div>
+    <hr>
+    <div id="demo"></div>
+    <hr>
+
+    <script>
+      var count = 0;
+
+      $( "li.c" ).next().text("fuground-color");
+
+      $('li').click(function () {
+        
+        let stuff = $(this).find('a')[0].className;
+        $("#demo").text(stuff);
+        console.log(stuff);
+
+        // let stuff = $(this).closest('.baba');
+        // $("#demo").text(stuff.find('a')[0].className);
+        // console.log(stuff.find('.d1')[0].className);
+
+        // count++;
+        // $("#demo").prepend(`Hello world! Times: ${count}<br>`);
+      });
+
+      $("button")
+        .first()
+        .click(function () {
+          update($("span").first());
+        });
+
+      $("button")
+        .last()
+        .click(function () {
+          $("button").first().trigger("click");
+          update($("span").last());
+        });
+
+      function update(j) {
+        var n = parseInt(j.text(), 10);
+        j.text(n + 1);
+      }
+    </script>
+  </body>
+</html>
