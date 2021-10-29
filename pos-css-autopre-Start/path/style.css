@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template:
+      "a   b" 100px
+      "c   d" 100px /
+      1fr  1fr;
+  }
+  
+  .cell-A {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: a;
+  }
+  
+  .cell-B {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: b;
+  }
+  
+  .cell-C {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: c;
+  }
+  
+  .cell-D {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: d;
+  }
